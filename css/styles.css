@@ -1,6 +1,6 @@
-:root {
+/* :root {
 
-}
+} */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -13,12 +13,18 @@ section {
 
 /* ******************* typography ****************** */
 
-h2 {
+h2,
+h3 {
     color: #dc413e;
     text-transform: uppercase;
     font-size: 3.75rem;
     font-weight: 200;
 }
+
+h3 {
+    font-size: 2.8125rem;
+}
+
 
 p {
     margin-bottom: 1.5rem;
@@ -28,6 +34,9 @@ p {
 
 header {
     background-color: #000;
+    position: sticky;
+    position: -webkit-sticky;
+    top: -90px;
 }
 
 svg {
@@ -37,6 +46,7 @@ svg {
 .nav-links {
     display: flex;
     flex-flow: wrap;
+    
 }
 
 .nav-links a {
@@ -56,6 +66,7 @@ svg {
 fieldset {
     border: none;
     padding: 0;
+    margin-bottom: 40px;
 }
 
 label {
@@ -71,4 +82,86 @@ textarea {
     border-radius: 5px;
     padding: 0.5rem;
     box-shadow: 2px 2px 3px #e8e8e8;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 300px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0px;
+}
+
+label[for="accept"] {
+    display: inline;
+    font-size: 1.2rem;
+}
+
+input[type="submit"] {
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    width: auto;
+    border: none;
+    background-color: #fff;
+    box-shadow: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: padding-left 1s ease;
+}
+
+input[type="submit"]:hover {
+    color: #dc413e;
+    padding-left: 20px;
+}
+
+input[id=name]:invalid,
+input[id=phone]:invalid,
+input[id=city]:invalid,
+input[id=email]:invalid,
+input[id=deadline]:invalid,
+input[id=budget]:invalid,
+textarea[id=description]:invalid {
+    outline: 1px solid tomato;
+}
+
+input[id=name]:valid,
+input[id=phone]:valid,
+input[id=city]:valid,
+input[id=email]:valid,
+input[id=deadline]:valid,
+input[id=budget]:valid,
+textarea[id=description]:valid {
+    outline: 1px solid blue;
+}
+
+@media only screen and (min-width: 1260px) {
+    /* Move to a 2 column layout, and add a fixed width container */
+    fieldset {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    fieldset div {
+        flex: 0 1 49%;
+    }
+
+    h3 {
+        width: 100%;
+    }
+
+    /* svg {
+        margin-top: 1rem;
+    } */
+
+    .inner-container,
+    section {
+        padding: 0;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
